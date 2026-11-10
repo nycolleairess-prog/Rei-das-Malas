@@ -1,312 +1,764 @@
-/* ===== REI DAS MALAS - ESTILO ===== */
+/* =====================================================
+   REI DAS MALAS - ESTILO DO SITE
+   Responsável pelo CSS: Emilly
+   Cores tiradas da logomarca:
+   azul #1449c8 | rosa #ff2e93 | amarelo #ffaa2b
+   ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+/* Fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+/* tira os espaços que o navegador coloca sozinho */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;   /* padding fica dentro da largura */
+}
+
+html {
+    scroll-behavior: smooth;  /* rolagem suave ao clicar nos links */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f6f7fb;
-    color: #1f2430;
+    background-color: #f7f7fa;  /* fundo neutro pra destacar os produtos */
+    color: #1e1e2a;             /* texto quase preto */
     line-height: 1.6;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none;    /* tira o sublinhado dos links */
     color: inherit;
 }
 
-.container {
-    width: 90%;
-    max-width: 1150px;
-    margin: 0 auto;
+ul {
+    list-style: none;         /* tira as bolinhas das listas */
+}
+
+img {
+    max-width: 100%;          /* imagem nunca passa do tamanho da caixa */
+    display: block;
+}
+
+/* esconde o texto na tela, mas leitores de tela ainda leem (acessibilidade) */
+.texto-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 
 /* ===== BOTÕES ===== */
 
-.botao {
+/* estilo que todos os botões têm em comum */
+.botao-principal,
+.botao-alternativo,
+.botao-ver-produto,
+.botao-contato,
+.botao-whatsapp {
     display: inline-block;
     padding: 12px 28px;
-    border-radius: 30px;
-    background-color: #0057D9;
+    border-radius: 30px;      /* botão arredondado */
+    font-weight: 500;
+    transition: 0.3s;         /* deixa o hover suave */
+}
+
+/* botão amarelo do banner ("Ver Produtos") */
+.botao-principal {
+    background-color: #ffaa2b;
+    color: #1e1e2a;
+}
+
+.botao-principal:hover {
+    background-color: #f39200;
+    transform: translateY(-2px);  /* sobe um pouquinho */
+}
+
+/* botão só com borda branca ("Explorar Categorias") */
+.botao-alternativo {
+    border: 2px solid white;
     color: white;
-    border: 2px solid #0057D9;
-    transition: 0.3s;
 }
 
-.botao:hover {
-    background-color: #003C96;
-    transform: translateY(-2px);
+.botao-alternativo:hover {
+    background-color: white;
+    color: #1449c8;
 }
 
-.botao-borda {
-    background-color: transparent;
-    border-color: white;
+/* botão verde do WhatsApp no menu */
+.botao-whatsapp {
+    background-color: #25d366;
+    color: white;
+    padding: 8px 20px;
 }
 
-.botao-whats {
-    background-color: #25D366;
-    border-color: #25D366;
+.botao-whatsapp:hover {
+    background-color: #1da851;
 }
 
 
-/* ===== MENU ===== */
+/* ===== CABEÇALHO (logo, pesquisa e carrinho) ===== */
 
 .cabecalho {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    position: sticky;
+    position: sticky;         /* cabeçalho fica fixo no topo ao rolar */
     top: 0;
-    z-index: 10;
+    z-index: 100;             /* fica por cima do resto da página */
 }
 
-.cabecalho .container {
+/* linha de cima: logo, localização, pesquisa e carrinho lado a lado */
+.cabecalho-superior {
+    max-width: 1200px;
+    margin: 0 auto;           /* centraliza */
+    padding: 12px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    gap: 25px;
 }
 
-.logo {
+/* logo + nome da loja */
+.marca {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.marca-imagem {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;      /* mostra a logo inteira sem cortar */
+}
+
+.marca-texto strong {
+    display: block;
     font-size: 20px;
-    font-weight: 700;
-    color: #0057D9;
+    color: #1449c8;
+    line-height: 1.1;
 }
 
-.logo img {
-    width: 48px;
-    border-radius: 50%;
+.marca-texto span {
+    font-size: 13px;
+    color: #777;
 }
 
-.menu {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-}
-
-.menu a:hover {
-    color: #0057D9;
-}
-
-
-/* ===== BANNER ===== */
-
-.banner {
-    background-image: linear-gradient(rgba(0, 35, 90, 0.65), rgba(0, 35, 90, 0.65)), url('../IMG/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 120px 0 100px;
-}
-
-.banner h1 {
-    font-size: 46px;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.banner span {
-    color: #F2B705;
-}
-
-.banner p {
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.botoes {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-
-/* ===== VANTAGENS ===== */
-
-.vantagens {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: -40px; /* sobe por cima do banner */
-}
-
-.vantagem {
-    background-color: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-
-.vantagem p {
+.localizacao-loja {
     font-size: 14px;
-    color: #666;
+    color: #555;
+}
+
+/* barra de pesquisa: flex 1 faz ela ocupar o espaço que sobra */
+.formulario-pesquisa {
+    flex: 1;
+    display: flex;
+    background-color: #f1f2f6;
+    border-radius: 30px;
+    overflow: hidden;         /* arredonda o botão junto */
+}
+
+.formulario-pesquisa input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;            /* tira a borda azul ao clicar */
+}
+
+.botao-pesquisa {
+    border: none;
+    background-color: #1449c8;
+    color: white;
+    font-size: 20px;
+    padding: 0 20px;
+    cursor: pointer;          /* mostra a mãozinha */
+}
+
+.atalho-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.icone-carrinho {
+    font-size: 22px;
+}
+
+/* bolinha rosa com a quantidade de itens */
+.contador-carrinho {
+    background-color: #ff2e93;
+    color: white;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;       /* deixa redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-/* ===== SEÇÕES ===== */
+/* ===== MENU DE NAVEGAÇÃO (faixa azul) ===== */
 
-.secao {
-    padding: 70px 0;
+.navegacao-principal {
+    background-color: #1449c8;
+    color: white;
 }
 
-.secao h2 {
+.navegacao-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu-categorias {
+    position: relative;       /* base pro submenu abrir embaixo dele */
+}
+
+/* botão "Todas as Categorias" */
+.botao-categorias {
+    list-style: none;         /* tira a setinha padrão do details */
+    background-color: #0e3596;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* caixa branca que abre com as categorias */
+.submenu-categorias {
+    position: absolute;       /* abre por cima do conteúdo */
+    top: 45px;
+    left: 0;
+    width: 220px;
+    background-color: white;
+    color: #1e1e2a;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+}
+
+.submenu-categorias a {
+    display: block;
+    padding: 8px 20px;
+}
+
+.submenu-categorias a:hover {
+    background-color: #f1f2f6;
+    color: #1449c8;
+}
+
+.lista-navegacao {
+    flex: 1;
+    display: flex;            /* links lado a lado */
+    gap: 22px;
+    font-size: 15px;
+}
+
+/* link com o mouse em cima e link da página atual ficam amarelos */
+.lista-navegacao a:hover,
+.lista-navegacao a[aria-current="page"] {
+    color: #ffaa2b;
+}
+
+
+/* ===== BANNER PRINCIPAL ===== */
+
+.banner-principal {
+    position: relative;       /* base pro fundo ficar atrás */
+    color: white;
+    overflow: hidden;
+}
+
+/* foto do aeroporto com uma película azul por cima pra o texto aparecer */
+.banner-fundo {
+    position: absolute;
+    inset: 0;                 /* ocupa o banner inteiro */
+    background-image: linear-gradient(rgba(10, 30, 90, 0.75), rgba(10, 30, 90, 0.55)), url('../img/fundo-aeroporto.png');
+    background-size: cover;   /* foto cobre tudo sem esticar */
+    background-position: center;
+}
+
+/* textos de um lado e foto das malas do outro */
+.banner-conteudo {
+    position: relative;       /* fica por cima do fundo */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px 40px;
+    display: flex;
+    flex-wrap: wrap;          /* no celular, um desce pra baixo do outro */
+    align-items: center;
+    gap: 40px;
+}
+
+/* cada lado ocupa metade */
+.banner-informacoes,
+.banner-vitrine {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-etiqueta {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);  /* branco transparente */
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.banner-informacoes h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+/* "mala certa!" em amarelo */
+.titulo-destaque {
+    color: #ffaa2b;
+}
+
+.banner-descricao {
+    font-size: 17px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.banner-acoes {
+    display: flex;            /* botões lado a lado */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.imagem-banner {
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* faixa com os benefícios embaixo do banner */
+.banner-beneficios {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+/* bolinha amarela com o ícone */
+.beneficio-icone {
+    background-color: #ffaa2b;
+    color: #1e1e2a;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ===== TÍTULO DAS SEÇÕES ===== */
+
+.secao-categorias,
+.secao-produtos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.cabecalho-secao {
     text-align: center;
-    font-size: 32px;
     margin-bottom: 40px;
 }
 
-.secao h2::after {
+.cabecalho-secao h2 {
+    font-size: 32px;
+}
+
+/* risquinho rosa embaixo do título */
+.cabecalho-secao h2::after {
     content: "";
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #F2B705;
-    margin: 8px auto 0;
+    background-color: #ff2e93;
+    border-radius: 4px;
+    margin: 8px auto 12px;
+}
+
+.cabecalho-secao p {
+    color: #666;
+}
+
+/* textinho azul em cima do título ("ESCOLHAS PARA SUA VIAGEM") */
+.etiqueta-secao {
+    color: #1449c8;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.link-ver-todos {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1449c8;
+    font-weight: 600;
+}
+
+.link-ver-todos:hover {
+    color: #ff2e93;
 }
 
 
-/* ===== CATÁLOGO E GALERIA ===== */
+/* ===== CATEGORIAS ===== */
 
-.catalogo,
-.galeria {
+.grade-categorias {
+    display: flex;
+    flex-wrap: wrap;          /* cards descem quando não cabem */
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-categoria {
+    width: 210px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-bottom: 4px solid #1449c8;  /* linha azul embaixo do card */
+    transition: 0.3s;
+}
+
+.card-categoria:hover {
+    transform: translateY(-6px);       /* card sobe */
+    border-bottom-color: #ff2e93;      /* linha fica rosa */
+}
+
+.categoria-icone {
+    font-size: 36px;
+}
+
+.card-categoria h3 {
+    font-size: 18px;
+    margin: 8px 0 4px;
+}
+
+.card-categoria p {
+    font-size: 13px;
+    color: #777;
+}
+
+.card-categoria strong {
+    font-size: 22px;
+    color: #1449c8;
+}
+
+/* "Conhecer opções" dos cards sem preço */
+.card-categoria span:last-child {
+    font-size: 14px;
+    color: #1449c8;
+    font-weight: 500;
+}
+
+/* card da Linha Luxo é escuro com detalhes amarelos pra se destacar */
+.categoria-luxo {
+    background-color: #1e1e2a;
+    color: white;
+    border-bottom-color: #ffaa2b;
+}
+
+.categoria-luxo p {
+    color: #bbb;
+}
+
+.categoria-luxo strong,
+.categoria-luxo .categoria-icone {
+    color: #ffaa2b;
+}
+
+
+/* ===== PRODUTOS EM DESTAQUE ===== */
+
+.grade-produtos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
 }
 
-.card {
-    position: relative;
-    width: 320px;
+.card-produto {
+    width: 340px;
     background-color: white;
-    border-radius: 14px;
-    overflow: hidden;
+    border-radius: 16px;
+    overflow: hidden;         /* foto acompanha os cantos arredondados */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
     transition: 0.3s;
 }
 
-.card:hover {
+.card-produto:hover {
     transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(20, 73, 200, 0.15);  /* sombra azulada */
 }
 
-.card img {
+.produto-imagem {
+    background-color: #f1f2f6;
+    overflow: hidden;         /* zoom da foto não sai da caixa */
+}
+
+.produto-imagem img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
+    height: 280px;            /* todas as fotos com a mesma altura */
+    object-fit: contain;      /* mostra a mala inteira, sem cortar */
+    padding: 15px;
+    transition: 0.4s;
 }
 
-.card-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: #F2B705;
-    font-size: 12px;
-    padding: 3px 12px;
-    border-radius: 20px;
+/* zoom na foto quando passa o mouse no card */
+.card-produto:hover .produto-imagem img {
+    transform: scale(1.05);
 }
 
-.card-conteudo {
+.produto-informacoes {
     padding: 20px;
 }
 
-.card-conteudo p {
-    color: #666;
+/* categoria em rosa em cima do nome */
+.produto-categoria {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff2e93;
+    letter-spacing: 1px;
+}
+
+.produto-informacoes h3 {
+    font-size: 19px;
+    margin: 4px 0;
+}
+
+.produto-descricao {
     font-size: 14px;
-    margin: 5px 0 12px;
+    color: #666;
 }
 
-.preco {
-    color: #0057D9;
+.produto-preco {
+    font-size: 14px;
+    color: #777;
+    margin: 12px 0 18px;
+}
+
+/* valor do preço grande e azul */
+.produto-preco strong {
     font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    color: #1449c8;
 }
 
-.card .botao {
+/* botão ocupa a largura toda do card */
+.botao-ver-produto {
     display: block;
     text-align: center;
+    background-color: #1449c8;
+    color: white;
 }
 
-.galeria img {
-    width: 260px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
+.botao-ver-produto:hover {
+    background-color: #0e3596;
 }
 
 
-/* ===== CONTATO E RODAPÉ ===== */
+/* ===== CONTATO ===== */
 
-.contato {
-    background-color: #1f2430;
+.secao-contato {
+    background-color: #1449c8;
     color: white;
     text-align: center;
+    padding: 70px 20px;
 }
 
-.contato p {
-    color: #ccc;
-    margin-bottom: 25px;
+.contato-conteudo {
+    max-width: 650px;         /* texto não fica largo demais */
+    margin: 0 auto;
 }
+
+.contato-etiqueta {
+    color: #ffaa2b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.contato-conteudo h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 10px 0 15px;
+}
+
+.contato-conteudo p {
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* botão rosa pra chamar atenção no fundo azul */
+.botao-contato {
+    background-color: #ff2e93;
+    color: white;
+}
+
+.botao-contato:hover {
+    background-color: #e01a7c;
+    transform: translateY(-2px);
+}
+
+
+/* ===== RODAPÉ ===== */
 
 .rodape {
-    background-color: #161a23;
-    color: #999;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
+    background-color: #1e1e2a;
+    color: #bbb;
 }
 
-
-/* ===== WHATSAPP FLUTUANTE ===== */
-
-.whats-flutuante {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 58px;
-    height: 58px;
-    background-color: #25D366;
-    border-radius: 50%;
+/* colunas do rodapé lado a lado */
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+/* logo com fundo branco pra aparecer no fundo escuro */
+.rodape-logo {
+    width: 70px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 12px;
+}
+
+.rodape-marca p {
+    color: white;
+    font-weight: 500;
+}
+
+.rodape-coluna h3 {
+    color: #ffaa2b;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.rodape-coluna li {
+    margin-bottom: 6px;
+}
+
+.rodape-coluna a:hover {
+    color: white;
+}
+
+/* faixa final com os direitos autorais */
+.rodape-inferior {
+    border-top: 1px solid #33334a;
+    text-align: center;
+    padding: 18px;
+    font-size: 13px;
 }
 
 
-/* ===== CELULAR ===== */
+/* ===== TABLET (telas até 900px) ===== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
-    .cabecalho .container {
-        flex-direction: column;
-        gap: 8px;
+    .cabecalho-superior {
+        flex-wrap: wrap;
     }
 
-    .banner h1 {
+    /* pesquisa desce e ocupa a linha toda */
+    .formulario-pesquisa {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .acoes-cabecalho {
+        margin-left: auto;    /* carrinho vai pra direita */
+    }
+
+    .navegacao-conteudo {
+        flex-wrap: wrap;
+    }
+
+    .lista-navegacao {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+
+/* ===== CELULAR (telas até 600px) ===== */
+
+@media (max-width: 600px) {
+
+    /* esconde o que não cabe no celular */
+    .localizacao-loja,
+    .texto-carrinho {
+        display: none;
+    }
+
+    .lista-navegacao {
+        display: none;        /* no celular fica só o menu de categorias */
+    }
+
+    .navegacao-conteudo {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .banner-informacoes h1 {
         font-size: 30px;
     }
 
-    .vantagem,
-    .card {
-        width: 100%;
+    /* texto e foto do banner um embaixo do outro */
+    .banner-informacoes,
+    .banner-vitrine {
+        min-width: 100%;
     }
 
-    .galeria img {
-        width: 45%;
-        height: 150px;
+    .banner-beneficios {
+        flex-direction: column;
+    }
+
+    .cabecalho-secao h2,
+    .contato-conteudo h2 {
+        font-size: 26px;
+    }
+
+    /* duas categorias por linha */
+    .card-categoria {
+        width: 47%;
+        padding: 20px 10px;
+    }
+
+    /* um produto por linha */
+    .card-produto {
+        width: 100%;
     }
 }
