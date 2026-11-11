@@ -3,627 +3,1202 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Configurações da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Rei das Malas em Salvador - BA. Malas de viagem, kits e acessórios para sua próxima aventura.">
+          content="Rei das Malas em Salvador. Malas, frasqueiras, kits e acessórios para viajar com estilo.">
 
-    <title>Rei das Malas | Sua viagem começa aqui</title>
+    <title>Rei das Malas | Sua próxima viagem começa aqui</title>
 
-    <!-- CSS: desenvolvido pela Emilly -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../CSS/home.css?v=7">
+    <link rel="stylesheet" href="../CSS/escolha-malas.css">
+
+    <style>
+        /* APENAS A GALERIA */
+
+        .galeria-fotos {
+            gap: 10px;
+        }
+
+        .galeria-fotos img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            transition: filter 0.3s ease;
+        }
+
+        .galeria-fotos img:hover {
+            transform: none;
+            filter: brightness(1.06);
+            box-shadow: none;
+        }
+
+        @media (max-width: 600px) {
+            .galeria-fotos {
+                gap: 8px;
+            }
+
+            .galeria-fotos img {
+                height: 190px;
+                border-radius: 0;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <!-- ===================================== -->
-    <!-- CABECALHO PRINCIPAL -->
-    <!-- ===================================== -->
+    <!-- CABEÇALHO -->
+    <header class="topo">
 
-    <header class="cabecalho">
+        <div class="container topo-conteudo">
 
-        <div class="cabecalho-superior">
-
-            <!-- Logomarca da loja -->
             <a href="index.html" class="marca">
-                <img src="img/logomarca.p"
-                     alt="Logomarca Rei das Malas"
-                     class="marca-imagem">
 
-                <div class="marca-texto">
+                <img src="../IMG/logomarca-circulo.jpeg"
+                     alt="Logomarca Rei das Malas">
+
+                <span class="marca-texto">
                     <strong>Rei das Malas</strong>
-                    <span>Salvador - BA</span>
-                </div>
+                    <small>SALVADOR · BA</small>
+                </span>
+
             </a>
 
-            <!-- Localizacao -->
-            <div class="localizacao-loja">
-                <span class="icone-localizacao" aria-hidden="true">📍</span>
-                <span>Salvador - BA</span>
-            </div>
+            <nav class="navegacao" aria-label="Menu principal">
+                <a href="#categorias">Categorias</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#sobre-empresa">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
 
-            <!-- Barra de pesquisa -->
-            <form class="formulario-pesquisa" role="search">
-
-                <label for="campo-pesquisa" class="texto-oculto">
-                    Pesquisar produtos
-                </label>
-
-                <input
-                    type="search"
-                    id="campo-pesquisa"
-                    name="pesquisa"
-                    placeholder="Buscar malas, kits e acessórios..."
-                >
-
-                <button type="submit"
-                        class="botao-pesquisa"
-                        aria-label="Pesquisar produtos">
-                    <span aria-hidden="true">⌕</span>
-                </button>
-
-            </form>
-
-            <!-- Carrinho -->
-            <div class="acoes-cabecalho">
-
-                <a href="carrinho.html"
-                   class="atalho-carrinho"
-                   aria-label="Ver carrinho de compras">
-
-                    <span class="icone-carrinho" aria-hidden="true">🛒</span>
-                    <span class="texto-carrinho">Carrinho</span>
-                    <span class="contador-carrinho">0</span>
-
-                </a>
-
-            </div>
+          <a href="https://wa.me/5571991547632"
+   class="botao-whatsapp-topo"
+   target="_blank"
+   rel="noopener noreferrer">
+    ☎ WhatsApp
+</a>
+            </a>
 
         </div>
-
-        <!-- ===================================== -->
-        <!-- MENU DE NAVEGACAO -->
-        <!-- ===================================== -->
-
-        <nav class="navegacao-principal"
-             aria-label="Navegação principal">
-
-            <div class="navegacao-conteudo">
-
-                <!-- Menu de categorias -->
-                <details class="menu-categorias">
-
-                    <summary class="botao-categorias">
-                        <span aria-hidden="true">☰</span>
-                        Todas as Categorias
-                    </summary>
-
-                    <ul class="submenu-categorias">
-                        <li>
-                            <a href="produtos.html?categoria=abs">
-                                Malas ABS
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="produtos.html?categoria=polipropileno">
-                                Polipropileno
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="produtos.html?categoria=luxo">
-                                Linha Luxo
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="produtos.html?categoria=kits">
-                                Kits de Viagem
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="produtos.html?categoria=acessorios">
-                                Acessorios
-                            </a>
-                        </li>
-                    </ul>
-
-                </details>
-
-                <!-- Links principais -->
-                <ul class="lista-navegacao">
-
-                    <li>
-                        <a href="index.html" aria-current="page">
-                            Inicio
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="produtos.html">Malas</a>
-                    </li>
-
-                    <li>
-                        <a href="produtos.html?categoria=kits">
-                            Kits de Viagem
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="produtos.html?categoria=acessorios">
-                            Acessorios
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="produtos.html?categoria=luxo">
-                            Linha Luxo
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="sobre.html">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="#contato">Contato</a>
-                    </li>
-
-                </ul>
-
-                <!-- WhatsApp -->
-                <a href="#contato" class="botao-whatsapp">
-                    WhatsApp
-                </a>
-
-            </div>
-
-        </nav>
 
     </header>
 
-    <!-- ===================================== -->
-    <!-- CONTEUDO PRINCIPAL -->
-    <!-- ===================================== -->
-
     <main>
 
-        <!-- ===================================== -->
         <!-- BANNER PRINCIPAL -->
-        <!-- ===================================== -->
+        <section class="hero" id="inicio">
 
-        <section class="banner-principal"
-                 aria-labelledby="titulo-banner">
+            <div class="container hero-conteudo">
 
-            <!-- Fundo do banner -->
-            <div class="banner-fundo" aria-hidden="true"></div>
+                <span class="aviao" aria-hidden="true">✈</span>
 
-            <div class="banner-conteudo">
-
-                <!-- Textos e botoes -->
-                <div class="banner-informacoes">
-
-                    <span class="banner-etiqueta">
-                        REI DAS MALAS | SALVADOR - BA
-                    </span>
-
-                    <h1 id="titulo-banner">
-                        Sua viagem comeCa com a
-                        <span class="titulo-destaque">
-                            mala certa!
-                        </span>
-                    </h1>
-
-                    <p class="banner-descricao">
-                        Encontre malas, kits e acessorios para
-                        viajar com qualidade, estilo e economia.
-                    </p>
-
-                    <div class="banner-acoes">
-
-                        <a href="produtos.html"
-                           class="botao-principal">
-                            Ver Produtos
-                        </a>
-
-                        <a href="#categorias"
-                           class="botao-alternativo">
-                            Explorar Categorias
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- Imagem das malas -->
-                <div class="banner-vitrine">
-
-                    <img
-                        src="img/banner-malas.png"
-                        alt="Tres malas de viagem em destaque"
-                        class="imagem-banner"
-                    >
-
-                </div>
-
-                <!-- Beneficios apresentados no banner -->
-                <div class="banner-beneficios">
-
-                    <div class="beneficio">
-                        <span class="beneficio-icone" aria-hidden="true">🚚</span>
-                        <span>Atendimento em Salvador</span>
-                    </div>
-
-                    <div class="beneficio">
-                        <span class="beneficio-icone" aria-hidden="true">✓</span>
-                        <span>Qualidade e Durabilidade</span>
-                    </div>
-
-                    <div class="beneficio">
-                        <span class="beneficio-icone" aria-hidden="true">💳</span>
-                        <span>Consulte as Formas de Pagamento</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ===================================== -->
-        <!-- CATEGORIAS DE PRODUTOS -->
-        <!-- ===================================== -->
-
-        <section id="categorias"
-                 class="secao-categorias"
-                 aria-labelledby="titulo-categorias">
-
-            <div class="cabecalho-secao">
-
-                <h2 id="titulo-categorias">
-                    Nossas Categorias
-                </h2>
-
-                <p>
-                    Descubra as opcoes ideais para sua viagem.
+                <p class="hero-selo">
+                    ESPECIALISTA EM VIAGEM · SALVADOR/BA
                 </p>
 
-            </div>
+                <h1>
+                    Sua próxima<br>
+                    <span>VIAGEM</span> começa aqui!
+                </h1>
 
-            <div class="grade-categorias">
+                <p class="hero-descricao">
+                    Malas, frasqueiras, kits completos e modelos
+                    premium para viajar com qualidade, segurança
+                    e muito estilo.
+                </p>
 
-                <!-- Categoria ABS -->
-                <a href="produtos.html?categoria=abs"
-                   class="card-categoria">
+                <div class="hero-acoes">
 
-                    <span class="categoria-icone" aria-hidden="true">🧳</span>
+                    <a href="#categorias" class="btn btn-ouro">
+                        ✧ Ver Produtos
+                    </a>
 
-                    <h3>Malas ABS</h3>
+                    <a href="https://wa.me/5571991547632?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20os%20produtos%20da%20Rei%20das%20Malas."
+                       class="btn btn-transparente"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        ☎ Falar no WhatsApp
+                    </a>
 
-                    <p>A partir de</p>
-                    <strong>R$ 180</strong>
+                </div>
 
-                </a>
+                <div class="precos-iniciais">
 
-                <!-- Categoria Polipropileno -->
-                <a href="produtos.html?categoria=polipropileno"
-                   class="card-categoria">
+                    <a href="#categorias" class="preco-caixa">
+                        <small>ABS</small>
+                        <strong>R$ 180+</strong>
+                    </a>
 
-                    <span class="categoria-icone" aria-hidden="true">🧳</span>
+                    <a href="#categorias" class="preco-caixa">
+                        <small>POLIPROPILENO</small>
+                        <strong>R$ 220+</strong>
+                    </a>
 
-                    <h3>Polipropileno</h3>
+                    <a href="#categorias" class="preco-caixa">
+                        <small>LINHA LUXO</small>
+                        <strong>R$ 220+</strong>
+                    </a>
 
-                    <p>A partir de</p>
-                    <strong>R$ 220</strong>
-
-                </a>
-
-                <!-- Categoria Linha Luxo -->
-                <a href="produtos.html?categoria=luxo"
-                   class="card-categoria categoria-luxo">
-
-                    <span class="categoria-icone" aria-hidden="true">♛</span>
-
-                    <h3>Linha Luxo</h3>
-
-                    <p>A partir de</p>
-                    <strong>R$ 220</strong>
-
-                </a>
-
-                <!-- Categoria Kits de Viagem -->
-                <a href="produtos.html?categoria=kits"
-                   class="card-categoria">
-
-                    <span class="categoria-icone" aria-hidden="true">🧳</span>
-
-                    <h3>Kits de Viagem</h3>
-
-                    <p>Conjuntos completos</p>
-                    <span>Conhecer opcoes</span>
-
-                </a>
-
-                <!-- Categoria Acessorios -->
-                <a href="produtos.html?categoria=acessorios"
-                   class="card-categoria">
-
-                    <span class="categoria-icone" aria-hidden="true">✈</span>
-
-                    <h3>Acessorios</h3>
-
-                    <p>Mais praticidade para viajar</p>
-                    <span>Conhecer opcoes</span>
-
-                </a>
+                </div>
 
             </div>
 
         </section>
 
-        <!-- ===================================== -->
-        <!-- PRODUTOS EM DESTAQUE -->
-        <!-- ===================================== -->
 
-        <section id="produtos-destaque"
-                 class="secao-produtos"
-                 aria-labelledby="titulo-produtos">
+        <!-- CATEGORIAS -->
+        <section class="secao-categorias" id="categorias">
 
-            <div class="cabecalho-secao">
+            <div class="container">
 
-                <div class="secao-apresentacao">
-                    <span class="etiqueta-secao">
-                        ESCOLHAS PARA SUA VIAGEM
-                    </span>
+                <div class="secao-cabecalho">
 
-                    <h2 id="titulo-produtos">
-                        Produtos em Destaque
+                    <p class="sobretitulo">
+                        NOSSAS CATEGORIAS
+                    </p>
+
+                    <h2>
+                        Escolha a mala perfeita
+                        para sua viagem
                     </h2>
 
                     <p>
-                        Conheca algumas opcoes disponiveis
-                        no Rei das Malas.
+                        Encontre modelos em diversas cores e
+                        tamanhos para acompanhar você em cada destino.
                     </p>
+
                 </div>
 
-                <a href="produtos.html" class="link-ver-todos">
-                    Ver todos os produtos
-                </a>
+                <div class="catalogo-categorias">
 
-            </div>
+                    <!-- MALAS ABS -->
+                    <article class="categoria-card">
 
-            <div class="grade-produtos">
+                        <div class="categoria-imagem">
 
-                <!-- PRODUTO 1 -->
-                <article class="card-produto">
+                            <img src="../IMG/malas-abs.png"
+                                 alt="Malas ABS em diferentes cores"
+                                 loading="lazy">
 
-                    <div class="produto-imagem">
-                        <img
-                            src="img/mala-abs.jpg"
-                            alt="Mala de viagem ABS"
-                            loading="lazy"
-                        >
-                    </div>
+                            <span class="tag tag-esquerda">
+                                ABS
+                            </span>
 
-                    <div class="produto-informacoes">
+                            <span class="tag tag-direita">
+                                VÁRIAS CORES
+                            </span>
 
-                        <span class="produto-categoria">
-                            MALAS ABS
-                        </span>
+                        </div>
 
-                        <h3>Mala de Viagem ABS</h3>
+                        <div class="categoria-info">
 
-                        <p class="produto-descricao">
-                            Praticidade para sua proxima viagem.
-                        </p>
+                            <div class="categoria-topo-info">
 
-                        <p class="produto-preco">
-                            A partir de <strong>R$ 180</strong>
-                        </p>
+                                <h3>Malas ABS</h3>
 
-                        <a href="produtos.html"
-                           class="botao-ver-produto">
-                            Ver Produto
-                        </a>
+                                <div class="preco-box">
+                                    <small>A PARTIR DE</small>
+                                    <strong>R$ 180,00</strong>
+                                </div>
 
-                    </div>
+                            </div>
 
-                </article>
+                            <p>
+                                Modelos práticos, modernos e resistentes.
+                                Disponíveis em diversas cores e tamanhos
+                                para acompanhar sua próxima viagem.
+                            </p>
 
-                <!-- PRODUTO 2 -->
-                <article class="card-produto">
+                            
+<button type="button"
+        class="botao-categoria escolher-mala"
+        data-categoria="abs">
+    Escolher tamanho
+</button>
 
-                    <div class="produto-imagem">
-                        <img
-                            src="img/mala-polipropileno.jpg"
-                            alt="Mala de polipropileno"
-                            loading="lazy"
-                        >
-                    </div>
+                           
 
-                    <div class="produto-informacoes">
+                        </div>
 
-                        <span class="produto-categoria">
-                            POLIPROPILENO
-                        </span>
+                    </article>
 
-                        <h3>Mala de Polipropileno</h3>
 
-                        <p class="produto-descricao">
-                            Uma opcao para acompanhar suas viagens.
-                        </p>
+                    <!-- POLIPROPILENO -->
+                    <article class="categoria-card">
 
-                        <p class="produto-preco">
-                            A partir de <strong>R$ 220</strong>
-                        </p>
+                        <div class="categoria-imagem">
 
-                        <a href="produtos.html"
-                           class="botao-ver-produto">
-                            Ver Produto
-                        </a>
+                            <img src="../IMG/malas.polipropileno.png"
+                                 alt="Malas de polipropileno"
+                                 loading="lazy">
 
-                    </div>
+                            <span class="tag tag-esquerda">
+                                PP
+                            </span>
 
-                </article>
+                            <span class="tag tag-direita">
+                                VÁRIAS CORES
+                            </span>
 
-                <!-- PRODUTO 3 -->
-                <article class="card-produto">
+                        </div>
 
-                    <div class="produto-imagem">
-                        <img
-                            src="img/mala-luxo.jpg"
-                            alt="Mala da linha luxo"
-                            loading="lazy"
-                        >
-                    </div>
+                        <div class="categoria-info">
 
-                    <div class="produto-informacoes">
+                            <div class="categoria-topo-info">
 
-                        <span class="produto-categoria">
-                            LINHA LUXO
-                        </span>
+                                <h3>Malas de Polipropileno</h3>
 
-                        <h3>Mala Linha Luxo</h3>
+                                <div class="preco-box">
+                                    <small>A PARTIR DE</small>
+                                    <strong>R$ 220,00</strong>
+                                </div>
 
-                        <p class="produto-descricao">
-                            Estilo e conforto para viajar.
-                        </p>
+                            </div>
 
-                        <p class="produto-preco">
-                            A partir de <strong>R$ 220</strong>
-                        </p>
+                            <p>
+                                Material resistente e durável, ideal
+                                para viajar com segurança e praticidade.
+                                Modelos em diferentes cores e tamanhos.
+                            </p>
 
-                        <a href="produtos.html"
-                           class="botao-ver-produto">
-                            Ver Produto
-                        </a>
+                          
+<button type="button"
+        class="botao-categoria escolher-mala"
+        data-categoria="polipropileno">
+    Escolher tamanho
+</button>
 
-                    </div>
+                        </div>
 
-                </article>
+                    </article>
+
+
+                    <!-- LINHA LUXO -->
+                    <article class="categoria-card">
+
+                        <div class="categoria-imagem">
+
+                            <img src="../IMG/linha-luxo.png"
+                                 alt="Malas da linha luxo"
+                                 loading="lazy">
+
+                            <span class="tag tag-esquerda">
+                                LUXO
+                            </span>
+
+                            <span class="tag tag-direita">
+                                VÁRIAS CORES
+                            </span>
+
+                        </div>
+
+                        <div class="categoria-info">
+
+                            <div class="categoria-topo-info">
+
+                                <h3>Linha Luxo</h3>
+
+                                <div class="preco-box">
+                                    <small>A PARTIR DE</small>
+                                    <strong>R$ 220,00</strong>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                Design sofisticado e acabamento
+                                premium para quem deseja viajar
+                                com elegância. Diferentes cores e
+                                tamanhos disponíveis.
+                            </p>
+
+                           
+<button type="button"
+        class="botao-categoria escolher-mala"
+        data-categoria="luxo">
+    Escolher tamanho
+</button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- FRASQUEIRAS -->
+                    <article class="categoria-card">
+
+                        <div class="categoria-imagem">
+
+                            <img src="../IMG/frasqueiras.png"
+                                 alt="Frasqueiras em várias cores"
+                                 loading="lazy">
+
+                            <span class="tag tag-esquerda">
+                                FRASQUEIRA
+                            </span>
+
+                            <span class="tag tag-direita">
+                                VÁRIAS CORES
+                            </span>
+
+                        </div>
+
+                        <div class="categoria-info">
+
+                            <div class="categoria-topo-info">
+
+                                <h3>Frasqueiras</h3>
+
+                                <div class="preco-box">
+                                    <small>A PARTIR DE</small>
+                                    <strong>R$ 100,00</strong>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                Frasqueiras modernas e práticas,
+                                perfeitas para organizar seus itens
+                                pessoais com segurança e estilo.
+                                Disponíveis em várias cores.
+                            </p>
+
+                            <a href="https://wa.me/5571991547632?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20frasqueiras."
+                               class="botao-categoria"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Saiba mais
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- KIT DE MALAS -->
+                    <article class="categoria-card">
+
+                        <div class="categoria-imagem">
+
+                            <img src="../IMG/kitdemalas.jpeg"
+                                 alt="Kits de malas em diferentes tamanhos"
+                                 loading="lazy">
+
+                            <span class="tag tag-esquerda">
+                                KIT
+                            </span>
+
+                            <span class="tag tag-direita">
+                                DIVERSAS CORES E TAMANHOS
+                            </span>
+
+                        </div>
+
+                        <div class="categoria-info">
+
+                            <div class="categoria-topo-info">
+
+                                <h3>Kit de Malas</h3>
+
+                                <div class="preco-box">
+                                    <small>PERSONALIZADO</small>
+                                    <strong>Monte o seu!</strong>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                Escolha suas malas e frasqueiras,
+                                combine tamanhos e monte seu
+                                próprio kit. O valor é calculado
+                                automaticamente.
+                            </p>
+
+                            <button type="button"
+                                    class="botao-categoria destaque"
+                                    id="abrir-kit">
+                                ✨ Monte seu Kit
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
 
         </section>
 
-        <!-- ===================================== -->
-        <!-- ATENDIMENTO E CONTATO -->
-        <!-- ===================================== -->
 
-        <section id="contato"
-                 class="secao-contato"
-                 aria-labelledby="titulo-contato">
+        <!-- PROMOÇÃO -->
+        <section class="secao-promocao" id="promocao">
 
-            <div class="contato-conteudo">
+            <div class="container">
 
-                <span class="contato-etiqueta">
-                    ESTAMOS AQUI PARA AJUDAR
-                </span>
+                <div class="promo-banner">
 
-                <h2 id="titulo-contato">
-                    Precisa de ajuda para escolher sua mala?
-                </h2>
+                    <div class="promo-texto">
 
-                <p>
-                    Fale com nossa equipe e descubra
-                    a melhor opczzzo para sua próxima viagem.
-                </p>
+                        <span class="promo-tag">
+                            ✦ DESTAQUES DA LOJA
+                        </span>
 
-                <a href="#informacoes-contato"
-                   class="botao-contato">
-                    Entre em Contato
-                </a>
+                        <h2>
+                            Viaje com muito
+                            <span>mais estilo!</span>
+                        </h2>
+
+                        <p>
+                            Encontre o modelo ideal para sua
+                            próxima aventura com variedade,
+                            qualidade e ótimos preços.
+                        </p>
+
+                        <div class="promo-listas">
+
+                            <ul>
+                                <li>
+                                    Malas ABS a partir de
+                                    <strong>R$ 180,00</strong>
+                                </li>
+
+                                <li>
+                                    Linha Luxo a partir de
+                                    <strong>R$ 220,00</strong>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>
+                                    Polipropileno a partir de
+                                    <strong>R$ 220,00</strong>
+                                </li>
+
+                                <li>
+                                    Monte seu kit personalizado
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="promo-botao-area">
+
+                        <a href="https://wa.me/5571991547632?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20na%20Rei%20das%20Malas."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="promo-botao">
+                            ☎ Solicitar Orçamento
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
+
+
+        <!-- POR QUE ESCOLHER O REI DAS MALAS -->
+        <section class="secao-confianca">
+
+            <div class="container">
+
+                <div class="confianca-cabecalho">
+
+                    <span class="confianca-selo">
+                        POR QUE ESCOLHER
+                    </span>
+
+                    <h2>
+                        O <span>Rei das Malas</span>
+                    </h2>
+
+                    <p>
+                        Variedade, praticidade e atendimento
+                        para sua próxima viagem.
+                    </p>
+
+                </div>
+
+                <div class="confianca-grid">
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">✦</div>
+                        <h3>Produtos de qualidade</h3>
+                    </div>
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">🧳</div>
+                        <h3>Variedade de malas</h3>
+                    </div>
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">♛</div>
+                        <h3>Linha Luxo</h3>
+                    </div>
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">✧</div>
+                        <h3>Frasqueiras e kits completos</h3>
+                    </div>
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">⌂</div>
+                        <h3>Loja física em Salvador</h3>
+                    </div>
+
+                    <div class="confianca-card">
+                        <div class="confianca-icone">♡</div>
+                        <h3>Atendimento personalizado</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVALIAÇÕES DOS CLIENTES -->
+        <section class="secao-avaliacoes" id="avaliacoes">
+
+            <div class="container">
+
+                <div class="avaliacoes-cabecalho">
+
+                    <span class="avaliacoes-selo">
+                        A OPINIÃO DE QUEM JÁ COMPROU
+                    </span>
+
+                    <h2>
+                        Algumas avaliações
+                        <span>da nossa loja</span>
+                    </h2>
+
+                    <p>
+                        Veja o que nossos clientes têm a dizer
+                        sobre suas experiências na Rei das Malas.
+                    </p>
+
+                </div>
+
+                <div class="avaliacoes-grid">
+
+                    <!-- AVALIAÇÃO 1 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Que loja maravilhosa! Sempre fico
+                            perdida na hora de escolher mala,
+                            mas aí tem várias opções para escolher."
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">L</div>
+
+                            <div>
+                                <strong>Leticia Costa</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AVALIAÇÃO 2 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Fui muito bem atendido na Rei das Malas.
+                            Tem bastante variedade, preços bons
+                            e o atendimento foi excelente.
+                            Com certeza recomendo a loja!"
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">M</div>
+
+                            <div>
+                                <strong>Mateus Firmo</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AVALIAÇÃO 3 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Muito bem feitas e resistentes.
+                            Além de lindas"
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">G</div>
+
+                            <div>
+                                <strong>gabih silva</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AVALIAÇÃO 4 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Atendimento excelente e muita variedade!
+                            Fiquei muito satisfeito com minha compra,
+                            a mala é ótima e parece ser super resistente.
+                            Recomendo demais o Rei das Malas!"
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">M</div>
+
+                            <div>
+                                <strong>Marzukervy Porto</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AVALIAÇÃO 5 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Ótima loja, preços bons e atendimento
+                            muito bom. Encontrei o que precisava
+                            e fiquei muito satisfeito com a compra!"
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">G</div>
+
+                            <div>
+                                <strong>giovanna Batista</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AVALIAÇÃO 6 -->
+                    <article class="avaliacao-card">
+
+                        <span class="estrelas"
+                              aria-label="5 estrelas">★★★★★</span>
+
+                        <p>
+                            "Atendimento excelente! Fiquei muito
+                            satisfeita com a compra. As malas são
+                            lindas, de ótima qualidade e o
+                            atendimento foi super atencioso.
+                            Com certeza comprarei novamente
+                            e recomendo a Rei das Malas!"
+                        </p>
+
+                        <div class="avaliacao-cliente">
+
+                            <div class="cliente-avatar">J</div>
+
+                            <div>
+                                <strong>Josivania Alves</strong>
+                                <small>Avaliação no Google</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALERIA DE MALAS -->
+        <section class="galeria" id="galeria">
+
+            <div class="container">
+
+                <div class="galeria-titulo">
+
+                    <p>NOSSA GALERIA</p>
+
+                    <h2>
+                        Conheça nossas <span>malas</span>
+                    </h2>
+
+                    <p>
+                        Confira alguns dos modelos e cores da nossa loja.
+                    </p>
+
+                </div>
+
+                <div class="galeria-fotos">
+
+                    <img src="../IMG/mala.preta.png"
+                         alt="Malas pretas"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.dourada.png"
+                         alt="Malas douradas"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.rose.png"
+                         alt="Malas rosé"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.azul.png"
+                         alt="Malas azuis"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.branca.png"
+                         alt="Malas brancas"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.verde.png"
+                         alt="Malas verdes"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.bege.png"
+                         alt="Malas bege"
+                         loading="lazy">
+
+                    <img src="../IMG/mala.vermelha.png"
+                         alt="Malas vermelhas"
+                         loading="lazy">
+
+                    <img src="../IMG/malas.coloridas.png"
+                         alt="Malas de várias cores"
+                         loading="lazy">
+
+                    <img src="../IMG/malas.polipropileno.png"
+                         alt="Malas de polipropileno"
+                         loading="lazy">
+
+                    <img src="../IMG/malas.pretas.png"
+                         alt="Conjunto de malas pretas"
+                         loading="lazy">
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- SOBRE A EMPRESA -->
+<section class="secao-sobre-home" id="sobre-empresa">
+
+    <div class="container sobre-home-conteudo">
+
+        <div class="sobre-home-texto">
+
+            <p class="sobre-home-selo">SOBRE A EMPRESA</p>
+
+            <h2>
+                Especialistas em <span>viagem</span>
+            </h2>
+
+            <p>
+                Na Rei das Malas, você encontra malas,
+                frasqueiras e kits em diferentes cores,
+                modelos e tamanhos para sua próxima viagem.
+            </p>
+
+            <p>
+                Nosso objetivo é oferecer variedade,
+                praticidade e estilo para acompanhar
+                você em cada destino.
+            </p>
+
+            <div class="sobre-home-acoes">
+
+                <a href="https://wa.me/5571991547632"
+                   class="sobre-home-botao sobre-home-whatsapp"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Fale conosco
+                </a>
+
+                <a href="sobre.html"
+                   class="sobre-home-botao sobre-home-conhecer">
+                    Conheça nossa loja
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="sobre-home-imagem">
+
+            <img src="../IMG/mala.azul.png"
+                 alt="Malas azuis da Rei das Malas"
+                 loading="lazy">
+
+            <div class="sobre-home-destaque">
+                ✦ Qualidade e estilo para viajar
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTATO E LOCALIZAÇÃO DA LOJA -->
+<section class="secao-contato-home" id="contato">
+
+    <div class="container contato-home-conteudo">
+
+        <!-- INFORMAÇÕES DA LOJA -->
+        <div class="contato-home-info">
+
+            <p class="contato-home-selo">CONTATO</p>
+
+            <h2>
+                Visite nossa <span>loja física</span>
+            </h2>
+
+            <div class="contato-home-detalhes">
+
+                <div class="contato-home-detalhe">
+                    <span class="contato-home-icone">📍</span>
+
+                    <div>
+                        <small>ENDEREÇO</small>
+                        <strong>Rua Bromélias Brancas, 732</strong>
+                        <p>Jardim das Margaridas · Salvador - BA</p>
+                    </div>
+                </div>
+
+                <div class="contato-home-detalhe">
+                    <span class="contato-home-icone">☎</span>
+
+                    <div>
+                        <small>TELEFONE</small>
+                        <strong>(71) 99154-7632</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOTÕES DE CONTATO -->
+            <div class="contato-home-botoes">
+
+                <a href="https://wa.me/5571991547632"
+                   class="contato-home-botao contato-home-principal"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    WhatsApp
+                </a>
+
+                <a href="https://www.instagram.com/reidasmalas__/"
+                   class="contato-home-botao"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bromelias+Brancas+732+Jardim+das+Margaridas+Salvador+BA"
+                   class="contato-home-botao"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Maps
+                </a>
+
+                <a href="tel:+5571991547632"
+                   class="contato-home-botao">
+                    Ligar
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- MAPA DA LOJA -->
+        <div class="contato-home-mapa">
+
+            <iframe
+                title="Localização da Rei das Malas em Salvador"
+                src="https://www.google.com/maps?q=Rua+Bromelias+Brancas+732+Jardim+das+Margaridas+Salvador+BA&amp;output=embed"
+                width="100%"
+                height="450"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     </main>
 
-    <!-- ===================================== -->
-    <!-- RODAPÉ -->
-    <!-- ===================================== -->
 
-    <footer class="rodape">
+    
+<!-- RODAPÉ -->
+<footer class="rodape">
 
-        <div class="rodape-conteudo">
+    <div class="container">
 
-            <!-- Identidade da loja -->
-            <div class="rodape-marca">
+        <div class="rodape-principal">
 
-                <img src="img/logo.png"
-                     alt="Rei das Malas"
-                     class="rodape-logo">
+            <!-- LOGOMARCA -->
+            <a href="#inicio" class="rodape-marca">
 
-                <p>
-                    Sua viagem começa com a mala certa!
-                </p>
+                <img src="../IMG/logomarca-circulo.jpeg"
+                     alt="Logomarca Rei das Malas">
 
-                <span>Salvador - Bahia</span>
+                <div>
+                    <strong>Rei das Malas</strong>
+                    <small>SALVADOR · BA</small>
+                </div>
 
-            </div>
+            </a>
 
-            <!-- Navegação -->
-            <div class="rodape-coluna">
+            <!-- DESCRIÇÃO -->
+            <p class="rodape-descricao">
+                Malas de viagem, frasqueiras, kits e produtos
+                importados com qualidade e atendimento especializado.
+            </p>
 
-                <h3>Institucional</h3>
+            <!-- REDES SOCIAIS -->
+            <div class="rodape-redes">
 
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
+                <a href="https://wa.me/5571991547632"
+                   class="rodape-botao rodape-whatsapp"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ☎ WhatsApp
+                </a>
 
-            </div>
-
-            <!-- Categorias -->
-            <div class="rodape-coluna">
-
-                <h3>Categorias</h3>
-
-                <ul>
-                    <li><a href="produtos.html?categoria=abs">Malas ABS</a></li>
-                    <li><a href="produtos.html?categoria=polipropileno">Polipropileno</a></li>
-                    <li><a href="produtos.html?categoria=luxo">Linha Luxo</a></li>
-                    <li><a href="produtos.html?categoria=kits">Kits de Viagem</a></li>
-                </ul>
-
-            </div>
-
-            <!-- Atendimento -->
-            <div class="rodape-coluna" id="informacoes-contato">
-
-                <h3>Atendimento</h3>
-
-                <p>Salvador - BA</p>
-
-                <a href="#contato">
-                    Fale com Nossa Equipe
+                <a href="https://www.instagram.com/reidasmalas__/"
+                   class="rodape-botao rodape-instagram"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ◎ Instagram
                 </a>
 
             </div>
 
         </div>
 
-        <!-- Direitos autorais -->
         <div class="rodape-inferior">
-
             <p>
-                &copy; 2026 Rei das Malas.
-                Todos os direitos reservados.
+                © 2026 Rei das Malas — Todos os direitos reservados.
             </p>
-
         </div>
 
-    </footer>
+    </div>
 
-    <!-- JavaScript: será desenvolvido posteriormente -->
-    <script src="js/script.js" defer></script>
+</footer>
 
-</body>
+
+
+    <!-- JANELA DO MONTADOR DE KITS -->
+    <div class="kit-fundo" id="kit-fundo" hidden>
+
+        <section class="kit-janela"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="kit-titulo">
+
+            <header class="kit-cabecalho">
+
+                <button type="button"
+                        id="fechar-kit"
+                        class="kit-fechar"
+                        aria-label="Fechar montador">
+                    ×
+                </button>
+
+                <span class="kit-etiqueta">
+                    ✨ MONTE SEU KIT
+                </span>
+
+                <h2 id="kit-titulo">
+                    Escolha suas malas e feche
+                    direto no WhatsApp
+                </h2>
+
+                <p>
+                    Combine quantas malas quiser de
+                    qualquer categoria. O total é
+                    atualizado em tempo real.
+                </p>
+
+            </header>
+
+            <div class="kit-conteudo">
+
+                <div class="kit-produtos"
+                     id="kit-produtos">
+                </div>
+
+                <aside class="kit-resumo">
+
+                    <div class="kit-resumo-titulo">
+
+                        <span>RESUMO DO KIT</span>
+
+                        <span id="kit-quantidade">
+                            0 itens
+                        </span>
+
+                    </div>
+
+                    <div class="kit-itens" id="kit-itens">
+                        Nenhum produto selecionado ainda.
+                    </div>
+
+                    <div class="kit-final">
+
+                        <div class="kit-total">
+
+                            <span>TOTAL</span>
+
+                            <strong id="kit-valor">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+                        <button type="button"
+                                id="finalizar-kit"
+                                class="kit-finalizar"
+                                disabled>
+                            Finalizar Pedido no WhatsApp
+                        </button>
+
+                        <button type="button"
+                                id="limpar-kit"
+                                class="kit-limpar">
+                            Limpar seleção
+                        </button>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </div>
+
+<!-- JANELA DE ESCOLHA DE MALAS -->
+<div class="escolha-fundo" id="escolha-fundo" hidden>
+
+    <section class="escolha-janela"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="escolha-titulo">
+
+        <button type="button"
+                class="escolha-fechar"
+                id="fechar-escolha"
+                aria-label="Fechar janela">
+            &times;
+        </button>
+
+        <p class="escolha-selo">REI DAS MALAS</p>
+
+        <h2 id="escolha-titulo">
+            Escolha sua mala
+        </h2>
+
+        <p class="escolha-descricao">
+            Selecione o tamanho desejado e confira o valor.
+        </p>
+
+        <label for="escolha-tamanho">
+            Tamanho / Capacidade
+        </label>
+
+        <select id="escolha-tamanho">
+            <option value="">Selecione um tamanho</option>
+        </select>
+
+        <div class="escolha-preco">
+            <span>Valor da mala</span>
+            <strong id="escolha-valor">R$ 0,00</strong>
+        </div>
+
+        <p class="escolha-aviso">
+            As cores disponíveis serão confirmadas
+            pelo WhatsApp.
+        </p>
+
+        <button type="button"
+                id="finalizar-escolha"
+                class="escolha-finalizar"
+                disabled>
+            Consultar disponibilidade no WhatsApp
+        </button>
+
+    </section>
+
+</div>
+
+   
+<!-- JAVASCRIPT DO MONTADOR DE KITS -->
+<script src="../JS/kit.js" defer></script>
+
+<!-- JAVASCRIPT DA ESCOLHA DE MALAS -->
+<script src="../JS/escolha-malas.js" defer></script>
+
 </html>
+
